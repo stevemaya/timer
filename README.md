@@ -69,7 +69,7 @@ If that's NOT pretty cool, either because you hate it or can't get it to work, y
 
 In this one, we allow the user to work in seconds, minutes, or even hours. We'll also teach you how to put these timers into the background, so you can test these more long-term without being stuck in your terminal.
 
-*How To Run Timers In The Background*
+**How To Run Timers In The Background**
 
 Try entering a high number in your previous timer solution. What happens? Your terminal hangs while waiting for the timer to go. You can always press Ctrl-C to quit out, but terminals have built-in functions for multi-tasking; we can push the timer to the background instead of stopping it.
 
@@ -86,7 +86,7 @@ So in these stretch goal version, when you're running a long timer, don't worry 
 
 You might still get impatient waiting, though.
 
-*Back To This Stretch Goal Version*
+**Back To This Stretch Goal Version**
 
 For this toughie, we'll allow our users to type in `1m` or `5m` to run a timer for 1 minute or 5 minutes. We'll even allow for a 1-hour or 3-hour timer via `1h` and `3h`. (This is much much nicer than asking our user to translate their minutes to seconds or, even worse, from hours to seconds.) 
 
