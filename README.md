@@ -65,4 +65,34 @@ If that's NOT pretty cool, either because you hate it or can't get it to work, y
 
 ### Stretch Goal Versions
 
-Coming soon!
+##### Stretch Goal Version 1
+
+In this one, we allow the user to work in seconds, minutes, or even hours. We'll also teach you how to put these timers into the background, so you can test these more long-term without being stuck in your terminal.
+
+*How To Run Timers In The Background*
+
+Try entering a high number in your previous timer solution. What happens? Your terminal hangs while waiting for the timer to go. You can always press Ctrl-C to quit out, but terminals have built-in functions for multi-tasking; we can push the timer to the background instead of stopping it.
+
+If you type in `node main.js 30`, instead of waiting 30 seconds, try:
+
+1. Hitting Ctrl-Z. This will pause the process and push it to the background.
+2. Typing the command `bg` will unpause the most-recently-backgrounded process.
+
+You can now go about your terminal business (even starting other timers), and when the 30 seconds has passed, you'll get your `main.js`'s' usual timer-ending code.
+
+But there's a better way! You can say "Run this command as an unpaused background process, please!" by simply typing an ampersand (`&`) after the command. In this instance, you could make a 30-second timer run in the background by typing `node main.js 30&`. This is pretty close to how you'd want a real terminal timer to run.
+
+So in these stretch goal version, when you're running a long timer, don't worry about entering too long a timer. You can test multiple timers at once and keep working with no troulbe at all.
+
+You might still get impatient waiting, though.
+
+*Back To This Stretch Goal Version*
+
+For this toughie, we'll allow our users to type in `1m` or `5m` to run a timer for 1 minute or 5 minutes. We'll even allow for a 1-hour or 3-hour timer via `1h` and `3h`. (This is much much nicer than asking our user to translate their minutes to seconds or, even worse, from hours to seconds.) 
+
+So how do we do it?
+
+1. For each time the user gives, save their time in a different `let`-declared variable. We'll need a separate variable in order to be able to translate their time to milliseconds while still keeping their original time value for printing purposes. (We don't want to tell them that a certain number of milliseconds has passed!)
+2. Now we'll need a logic chain to check the character at the last index of the string they passed. If it's `h`, we'll need to convert from hours, and if it's `m`, we'll need to convert from minutes. (Feel free to deal with `d` as well, though that's even more difficult to test, for sure!)
+3. For each of those cases, we'll need a different calculation to make our value in milliseconds. Don't forget to slice off the last character; multiplying `2h` won't work, but multiplying `2` will!
+4. Once you've got the milliseconds right, we can just set a timer for that time. Make sure to use your milliseconds for `setTimeout`, but the user's time string when printing out how much time has passed!
