@@ -95,4 +95,19 @@ So how do we do it?
 1. For each time the user gives, save their time in a different `let`-declared variable. We'll need a separate variable in order to be able to translate their time to milliseconds while still keeping their original time value for printing purposes. (We don't want to tell them that a certain number of milliseconds has passed!)
 2. Now we'll need a logic chain to check the character at the last index of the string they passed. If it's `h`, we'll need to convert from hours, and if it's `m`, we'll need to convert from minutes. (Feel free to deal with `d` as well, though that's even more difficult to test, for sure!)
 3. For each of those cases, we'll need a different calculation to make our value in milliseconds. Don't forget to slice off the last character; multiplying `2h` won't work, but multiplying `2` will!
-4. Once you've got the milliseconds right, we can just set a timer for that time. Make sure to use your milliseconds for `setTimeout`, but the user's time string when printing out how much time has passed!
+4. Once you've got the milliseconds right, we can just set a timer for that time. Make sure to use your milliseconds for `setTimeout`, while using the user's original time string when printing out how much time has passed!
+
+
+### Stretch Goal Version 2 - Custom Messages
+
+For this one, you'll allow the user to type in just one timer, but in the following, more user-friendly format:
+
+```sh
+node main.js 10s feed the fish
+```
+
+All of the words after our user's time is the message to notify them with when the time is over.
+
+`.join` is your friend here!
+
+
